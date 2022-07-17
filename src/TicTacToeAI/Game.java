@@ -11,7 +11,7 @@ public class Game {
     };
     public static final String human = "O";
     public static final String ai = "X";
-    public static String currentPlayer = human;
+    public static String currentPlayer = ai;
 
     public void loop() {
 
@@ -30,33 +30,21 @@ public class Game {
 
             if (currentPlayer == human) {
                 while (true) {
-                    try (Scanner userInput = new Scanner(System.in)) {
-                        System.out.println("x:");
-                        int x = userInput.nextInt() - 1;
-                        System.out.println("y:");
-                        int y = userInput.nextInt() - 1;
-                        if (isValidPosition(x, y)) {
-                            board[x][y] = human;
-                            break;
-                        }
+                    Scanner userInput = new Scanner(System.in);
+                    System.out.println("x:");
+                    int x = userInput.nextInt() - 1;
+                    System.out.println("y:");
+                    int y = userInput.nextInt() - 1;
+                    if (isValidPosition(x, y)) {
+                        board[x][y] = human;
+                        break;
                     }
+                    
                 }
                 currentPlayer = ai;
 
             } else {
-                while (true) {
-                    try (Scanner userInput = new Scanner(System.in)) {
-                        System.out.println("x:");
-                        int x = userInput.nextInt() - 1;
-                        System.out.println("y:");
-                        int y = userInput.nextInt() - 1;
-                        if (isValidPosition(x, y)) {
-                            board[x][y] = ai;
-                            userInput.close();
-                            break;
-                        }
-                    }
-                }
+                Ai.bestMove();
                 currentPlayer = human;
             }
 
