@@ -11,7 +11,7 @@ public class Game {
     };
     public static final String human = "O";
     public static final String ai = "X";
-    public static String currentPlayer = ai;
+    public static String currentPlayer = human;
 
     public void loop() {
 
@@ -39,7 +39,7 @@ public class Game {
                         board[x][y] = human;
                         break;
                     }
-                    
+
                 }
                 currentPlayer = ai;
 
@@ -90,7 +90,7 @@ public class Game {
                 || (board[0][2] == board[1][1] && board[1][1] == board[2][0])) && board[1][1] != " ") {
             return board[1][1];
         }
-        
+
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 3; column++) {
                 if (board[row][column] == " ") {
@@ -98,7 +98,6 @@ public class Game {
                 }
             }
         }
-
         return "tie";
     }
 }

@@ -10,7 +10,7 @@ public class Ai {
             for (int column = 0; column < 3; column++) {
                 if (Game.board[row][column] == " ") {
                     Game.board[row][column] = Game.ai;
-                    int score = miniMax(Game.board, true);
+                    int score = miniMax(Game.board, false);
                     Game.board[row][column] = " ";
 
                     if (score > bestScore) {
@@ -61,7 +61,6 @@ public class Ai {
                 }
             }
             return bestScoreMax;
-
         }
     }
 
