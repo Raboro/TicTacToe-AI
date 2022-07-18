@@ -35,7 +35,7 @@ ai, which uses the **[Minimax-Algorithmus]** to make a move.
 ## **Change starting Player**
 <br/>
 
-> On default the starting Player is the human, who going to play against the **AI** 
+On default the starting Player is the human, who going to play against the **AI** 
 <br/>
 Following code shows how to change it in the **`Game.java`** file:
 
