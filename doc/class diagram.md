@@ -3,8 +3,8 @@
 @startuml
 
 Main <|-- Game
-Ai *-- Game
-Game *-- Ai
+Ai <|-- Game
+Game <|-- Ai
 
 class Ai {
     + static void bestMove()

@@ -1,7 +1,7 @@
 ## **Getting Started**
 
 This project contains a terminal **[TicTacToe]** game. You play against an 
-ai, which uses the **[Minimax-Algorithmus]** to make a move.
+AI, which uses the **[Minimax-Algorithmus]** to make a move.
 
 <br/>
 
@@ -21,17 +21,6 @@ ai, which uses the **[Minimax-Algorithmus]** to make a move.
         - Main.java
 
 <br/>
-
-<!--
-```java
-    public void main(String[] args) {
-        System.out.print("Hello");
-    }
-```
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
--->
 
 ## **Change starting Player**
 <br/>
