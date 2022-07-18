@@ -51,7 +51,7 @@ public class Game {
         }
     }
 
-    private boolean isValidPosition(int x, int y) {
+    public static boolean isValidPosition(int x, int y) {
         if (board[x][y] == " ") {
             return true;
         }
