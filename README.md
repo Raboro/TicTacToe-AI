@@ -17,9 +17,9 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
 ## **Folder Structure**
 <br/>
 
-- **`.vscode`**: settings for vscode
-     - settings.json 
-- **`bin`**: the folder with compiled output files 
+- **`.vscode`: settings for vscode**
+     > - settings.json 
+- **`bin`: the folder with compiled output files**
      > - **`Tests`**
      >   - TestAi.class
      >   - TestGame.class  
@@ -27,20 +27,20 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
      >   - Ai.java
      >  - Game.java
      >  - Main.java
-- **`doc`**: the folder contains the documentation and diagrams
-     - class diagram.md
-     - documentation.docx
-- **`lib`**: the folder to maintain dependencies
-     - hamcrest-core-1.3.jar 
-     - juni-4.13.2.jar
-- **`src`**: the folder to maintain sources
-     - **`Tests`**
-        - TestAi.java
-        - TestGame.java
-     - **`TicTacToeAI`**
-        - Ai.java
-        - Game.java
-        - Main.java
+- **`doc`: the folder contains the documentation and diagrams**
+     > - class diagram.md
+     > - documentation.docx
+- **`lib`: the folder to maintain dependencies**
+     > - hamcrest-core-1.3.jar 
+     > - juni-4.13.2.jar
+- **`src`: the folder to maintain sources**
+     > - **`Tests`**
+     >   - TestAi.java
+     >   - TestGame.java
+     > - **`TicTacToeAI`**
+     >   - Ai.java
+     >   - Game.java
+     >   - Main.java
 
 <br/>
 
