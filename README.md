@@ -8,6 +8,7 @@ ai, which uses the [Minimax-Algorithmus] to make a move.
 The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
+    > hi
 - `lib`: the folder to maintain dependencies
 - `bin`: the folder with compiled output files 
 
