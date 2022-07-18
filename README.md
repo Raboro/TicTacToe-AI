@@ -25,8 +25,8 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
      >   - TestGame.class  
      > - **`TicTacToeAI`**
      >   - Ai.java
-     >  - Game.java
-     >  - Main.java
+     >   - Game.java
+     >   - Main.java
 - **`doc`: the folder contains the documentation and diagrams**
      > - class diagram.md
      > - documentation.docx
