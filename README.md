@@ -1,6 +1,6 @@
 ## Getting Started
 
-This project contains a terminal `[TicTacToe]` game. You play against an 
+This project contains a terminal [TicTacToe] game. You play against an 
 ai, which uses the minimax algorithm to make a move.
 
 ## Folder Structure
