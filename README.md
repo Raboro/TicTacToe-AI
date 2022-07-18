@@ -20,13 +20,13 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
 - **`.vscode`**: settings for vscode
      - settings.json 
 - **`bin`**: the folder with compiled output files 
-     - **`Tests`**
-        - TestAi.class
-        - TestGame.class  
-     - **`TicTacToeAI`**
-        - Ai.java
-        - Game.java
-        - Main.java
+     > - **`Tests`**
+     >   - TestAi.class
+     >   - TestGame.class  
+     > - **`TicTacToeAI`**
+     >   - Ai.java
+     >  - Game.java
+     >  - Main.java
 - **`doc`**: the folder contains the documentation and diagrams
      - class diagram.md
      - documentation.docx
