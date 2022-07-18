@@ -8,8 +8,9 @@ ai, which uses the **[Minimax-Algorithmus]** to make a move.
 ## **Folder Structure**
 <br/>
 
-- **`bin`**  the folder with compiled output files 
+- **`bin`**: the folder with compiled output files 
 - **`lib`**: the folder to maintain dependencies
+- **`doc`**: the folder contains the documentation and diagrams
 - **`src`**: the folder to maintain sources
      - **`Tests`**
         - TestAi.java
