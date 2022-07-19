@@ -26,10 +26,10 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
      > - **`TicTacToeAI`**
      >   - Ai.java
      >   - Game.java
-     >   - Main.java
+     >   - Main.javass
 - **`doc`: the folder contains the documentation and diagrams**
-     > - class diagram.md
-     > - documentation.docx
+     > - [classdiagram.md]
+     > - [documentation.docx]
 - **`lib`: the folder to maintain dependencies**
      > - hamcrest-core-1.3.jar 
      > - juni-4.13.2.jar
@@ -82,3 +82,5 @@ public class Game {
 [Main.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/TicTacToeAI/Ai.java
 [TestAi.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/Tests/TestAi.java
 [TestGame.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/Tests/TestGame.java
+[classdiagram.md]:https://github.com/Raboro/TicTacToe-AI/blob/master/doc/classdiagram.md
+[documentation.docx]:https://github.com/Raboro/TicTacToe-AI/blob/master/doc/documentation.docx
