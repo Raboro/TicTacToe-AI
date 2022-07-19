@@ -44,7 +44,7 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
 
 <br/>
 
-## **Change starting Player**
+## **Change Starting Player**
 <br/>
 
 On default the starting Player is the human, who going to play against the **AI**.
