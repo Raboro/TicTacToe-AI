@@ -35,8 +35,8 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
      > - juni-4.13.2.jar
 - **`src`: the folder to maintain sources**
      > - **`Tests`**
-     >   - TestAi.java
-     >   - TestGame.java
+     >   - [TestAi.java]
+     >   - [TestGame.java]
      > - **`TicTacToeAI`**
      >   - [Ai.java]
      >   - [Game.java]
@@ -80,3 +80,5 @@ public class Game {
 [Ai.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/TicTacToeAI/Ai.java
 [Game.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/TicTacToeAI/Game.java
 [Main.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/TicTacToeAI/Ai.java
+[TestAi.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/Tests/TestAi.java
+[TestGame.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/Tests/TestGame.java
