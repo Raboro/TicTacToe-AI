@@ -21,18 +21,18 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
      > - [settings.json] 
 - **`bin`: the folder with compiled output files**
      > - **`Tests`**
-     >   - TestAi.class
-     >   - TestGame.class  
+     >   - [TestAi.class]
+     >   - [TestGame.class]  
      > - **`TicTacToeAI`**
-     >   - Ai.class
-     >   - Game.class
-     >   - Main.class
+     >   - [Ai.class]
+     >   - [Game.class]
+     >   - [Main.class]
 - **`doc`: the folder contains the documentation and diagrams**
      > - [classdiagram.md]
      > - [documentation.docx]
 - **`lib`: the folder to maintain dependencies**
-     > - hamcrest-core-1.3.jar 
-     > - juni-4.13.2.jar
+     > - [hamcrest-core-1.3.jar]
+     > - [junit-4.13.2.jar]
 - **`src`: the folder to maintain sources**
      > - **`Tests`**
      >   - [TestAi.java]
@@ -85,3 +85,10 @@ public class Game {
 [classdiagram.md]:https://github.com/Raboro/TicTacToe-AI/blob/master/doc/classdiagram.md
 [documentation.docx]:https://github.com/Raboro/TicTacToe-AI/blob/master/doc/documentation.docx
 [settings.json]:https://github.com/Raboro/TicTacToe-AI/blob/master/.vscode/settings.json
+[TestAI.class]:https://github.com/Raboro/TicTacToe-AI/blob/master/bin/Tests/TestAi.class
+[TestGame.class]:https://github.com/Raboro/TicTacToe-AI/blob/master/bin/Tests/TestGame.class
+[Ai.class]:https://github.com/Raboro/TicTacToe-AI/blob/master/bin/TicTacToeAI/Ai.class
+[Game.class]:https://github.com/Raboro/TicTacToe-AI/blob/master/bin/TicTacToeAI/Game.class
+[Main.class]:https://github.com/Raboro/TicTacToe-AI/blob/master/bin/TicTacToeAI/Main.class
+[hamcrest-core-1.3.jar]:https://github.com/Raboro/TicTacToe-AI/blob/master/lib/hamcrest-core-1.3.jar
+[junit-4.13.2.jar]:https://github.com/Raboro/TicTacToe-AI/blob/master/lib/junit-4.13.2.jar
