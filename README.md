@@ -5,7 +5,7 @@ AI, which uses the <br/>
  **[Minimax-Algorithmus]** to make a move.
 
 This project contains the three java files:
-   - Ai.java
+   - [Ai.java]
    - Game.java
    - Main.java
 
@@ -24,7 +24,7 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
      >   - TestAi.class
      >   - TestGame.class  
      > - **`TicTacToeAI`**
-     >   - Ai.java
+     >   - [Ai.java]
      >   - Game.java
      >   - Main.java
 - **`doc`: the folder contains the documentation and diagrams**
@@ -77,3 +77,4 @@ public class Game {
 
 [TicTacToe]:https://de.wikipedia.org/wiki/Tic-Tac-
 [Minimax-Algorithmus]:https://de.wikipedia.org/wiki/Minimax-Algorithmus
+[Ai.java]: https://github.com/Raboro/TicTacToe-AI/blob/master/src/TicTacToeAI/Ai.java
