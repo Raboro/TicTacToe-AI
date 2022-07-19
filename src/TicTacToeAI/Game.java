@@ -9,9 +9,9 @@ public class Game {
             { " ", " ", " " },
             { " ", " ", " " }
     };
-    public static final String human = "O";
-    public static final String ai = "X";
-    public static String currentPlayer = human;
+    public static final String HUMAN = "O";
+    public static final String AI = "X";
+    public static String currentPlayer = HUMAN;
 
     public void loop() {
 
@@ -28,32 +28,32 @@ public class Game {
                 break;
             }
 
-            if (currentPlayer == human) {
+            if (currentPlayer == HUMAN) {
                 while (true) {
                     Scanner userInput = new Scanner(System.in);
-                    System.out.println("x:");
-                    int x = userInput.nextInt() - 1;
-                    System.out.println("y:");
-                    int y = userInput.nextInt() - 1;
-                    if (isValidPosition(x, y)) {
-                        board[x][y] = human;
+                    System.out.println("\nrow:");
+                    int row = userInput.nextInt() - 1;
+                    System.out.println("column:");
+                    int column = userInput.nextInt() - 1;
+                    if (isValidPosition(row, column)) {
+                        board[row][column] = HUMAN;
                         break;
                     }
 
                 }
-                currentPlayer = ai;
-
+                currentPlayer = AI;
             } else {
                 Ai.bestMove();
-                currentPlayer = human;
+                currentPlayer = HUMAN;
             }
-
         }
     }
 
-    public static boolean isValidPosition(int x, int y) {
-        if (board[x][y] == " ") {
-            return true;
+    public static boolean isValidPosition(int row, int column) {
+        if (row < 3 && column < 3) {
+            if (board[row][column] == " ") {
+                return true;
+            }
         }
         return false;
     }

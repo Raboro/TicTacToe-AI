@@ -9,8 +9,8 @@ public class Ai {
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 3; column++) {
                 if (Game.board[row][column] == " ") {
-                    Game.board[row][column] = Game.ai;
-                    int score = miniMax(Game.board, false);
+                    Game.board[row][column] = Game.AI;
+                    int score = miniMax(false);
                     Game.board[row][column] = " ";
 
                     if (score > bestScore) {
@@ -21,10 +21,10 @@ public class Ai {
                 }
             }
         }
-        Game.board[move[0]][move[1]] = Game.ai;
+        Game.board[move[0]][move[1]] = Game.AI;
     }
 
-    private static int miniMax(String[][] board, boolean isMaximasing) {
+    private static int miniMax(boolean isMaximasing) {
         if (Game.isTerminalState() != null) {
             return scores(Game.isTerminalState());
         }
@@ -34,13 +34,10 @@ public class Ai {
             for (int row = 0; row < 3; row++) {
                 for (int column = 0; column < 3; column++) {
                     if (Game.board[row][column] == " ") {
-                        Game.board[row][column] = Game.ai;
-                        int scoreMax = miniMax(board, false);
+                        Game.board[row][column] = Game.AI;
+                        int scoreMax = miniMax(false);
                         Game.board[row][column] = " ";
-
-                        if (scoreMax > bestScoreMax) {
-                            bestScoreMax = scoreMax;
-                        }
+                        bestScoreMax = Math.max(scoreMax, bestScoreMax);
                     }
                 }
             }
@@ -50,13 +47,10 @@ public class Ai {
             for (int row = 0; row < 3; row++) {
                 for (int column = 0; column < 3; column++) {
                     if (Game.board[row][column] == " ") {
-                        Game.board[row][column] = Game.human;
-                        int scoreMax = miniMax(board, true);
+                        Game.board[row][column] = Game.HUMAN;
+                        int scoreMax = miniMax(true);
                         Game.board[row][column] = " ";
-
-                        if (scoreMax < bestScoreMax) {
-                            bestScoreMax = scoreMax;
-                        }
+                        bestScoreMax = Math.min(scoreMax, bestScoreMax);
                     }
                 }
             }

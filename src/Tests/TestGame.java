@@ -26,12 +26,12 @@ public class TestGame {
 
     @Test
     public void testDefaultHumanValue() {
-        Assert.assertEquals("O", Game.human);
+        Assert.assertEquals("O", Game.HUMAN);
     }
 
     @Test
     public void testDefaultAiValue() {
-        Assert.assertEquals("X", Game.ai);
+        Assert.assertEquals("X", Game.AI);
     }
 
     @Test
@@ -120,17 +120,17 @@ public class TestGame {
         Game.board[2][1] = "O";
         Game.board[2][2] = "O";
 
-        Assert.assertEquals(Game.human, Game.isTerminalState());
+        Assert.assertEquals(Game.HUMAN, Game.isTerminalState());
 
         Game.board[2][2] = "X";
         Game.board[2][0] = "O";
 
-        Assert.assertEquals(Game.human, Game.isTerminalState());
+        Assert.assertEquals(Game.HUMAN, Game.isTerminalState());
 
         Game.board[1][0] = "O";
         Game.board[2][2] = "X";
 
-        Assert.assertEquals(Game.human, Game.isTerminalState());
+        Assert.assertEquals(Game.HUMAN, Game.isTerminalState());
 
 
         Game.board[0][0] = " ";
@@ -156,17 +156,17 @@ public class TestGame {
         Game.board[2][1] = "X";
         Game.board[2][2] = "X";
 
-        Assert.assertEquals(Game.ai, Game.isTerminalState());
+        Assert.assertEquals(Game.AI, Game.isTerminalState());
 
         Game.board[2][2] = "O";
         Game.board[2][0] = "X";
 
-        Assert.assertEquals(Game.ai, Game.isTerminalState());
+        Assert.assertEquals(Game.AI, Game.isTerminalState());
 
         Game.board[1][0] = "X";
         Game.board[2][2] = "O";
 
-        Assert.assertEquals(Game.ai, Game.isTerminalState());
+        Assert.assertEquals(Game.AI, Game.isTerminalState());
 
 
         Game.board[0][0] = " ";

@@ -34,7 +34,7 @@ public class TestAi {
                 { " ", " ", " " }
         };
 
-        Game.board[1][1] = Game.human;
+        Game.board[1][1] = Game.HUMAN;
 
         Ai.bestMove();
         for (int x = 0; x < 3; x++) {
@@ -53,7 +53,7 @@ public class TestAi {
                 { "X", " ", " " }
         };
 
-        Game.board[0][2] = Game.human;
+        Game.board[0][2] = Game.HUMAN;
 
         Ai.bestMove();
         for (int x = 0; x < 3; x++) {
