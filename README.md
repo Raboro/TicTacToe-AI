@@ -18,15 +18,15 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
 <br/>
 
 - **`.vscode`: settings for vscode**
-     > - settings.json 
+     > - [settings.json] 
 - **`bin`: the folder with compiled output files**
      > - **`Tests`**
      >   - TestAi.class
      >   - TestGame.class  
      > - **`TicTacToeAI`**
-     >   - Ai.java
-     >   - Game.java
-     >   - Main.java
+     >   - Ai.class
+     >   - Game.class
+     >   - Main.class
 - **`doc`: the folder contains the documentation and diagrams**
      > - [classdiagram.md]
      > - [documentation.docx]
@@ -84,3 +84,4 @@ public class Game {
 [TestGame.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/Tests/TestGame.java
 [classdiagram.md]:https://github.com/Raboro/TicTacToe-AI/blob/master/doc/classdiagram.md
 [documentation.docx]:https://github.com/Raboro/TicTacToe-AI/blob/master/doc/documentation.docx
+[settings.json]:https://github.com/Raboro/TicTacToe-AI/blob/master/.vscode/settings.json
