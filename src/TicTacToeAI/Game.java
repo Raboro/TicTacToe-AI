@@ -12,12 +12,28 @@ public class Game {
     public static final String HUMAN = "O";
     public static final String AI = "X";
     public static String currentPlayer = HUMAN;
+    private int[] humanPosition;
+
+    private void getHumanPosition() {
+        while (true) {
+            Scanner userInput = new Scanner(System.in);
+            System.out.println("\nrow:");
+            int row = userInput.nextInt() - 1;
+            System.out.println("column:");
+            int column = userInput.nextInt() - 1;
+            if (isValidPosition(row, column)) {
+                humanPosition = new int[] { row, column };
+                break;
+            }
+        }
+    }
 
     public void loop() {
 
         while (true) {
             printBoard();
 
+            // check if game if over
             String state = isTerminalState();
             if (state != null) {
                 if (state == "tie") {
@@ -28,19 +44,10 @@ public class Game {
                 break;
             }
 
+            // human and KI make a move
             if (currentPlayer == HUMAN) {
-                while (true) {
-                    Scanner userInput = new Scanner(System.in);
-                    System.out.println("\nrow:");
-                    int row = userInput.nextInt() - 1;
-                    System.out.println("column:");
-                    int column = userInput.nextInt() - 1;
-                    if (isValidPosition(row, column)) {
-                        board[row][column] = HUMAN;
-                        break;
-                    }
-
-                }
+                getHumanPosition();
+                board[humanPosition[0]][humanPosition[1]] = HUMAN;
                 currentPlayer = AI;
             } else {
                 Ai.bestMove();
