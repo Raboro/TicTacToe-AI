@@ -6,8 +6,8 @@ AI, which uses the <br/>
 
 This project contains the three java files:
    - [Ai.java]
-   - Game.java
-   - Main.java
+   - [Game.java]
+   - [Main.java]
 
 These files are necessary to run the game and are in **`src/TicTacToeAI`**.
 In addition to that I also added two Test files, which are in **`src/Tests`**. These two files are writen with JUnit-4. I also created a class diagram and a documentation, both are in **`doc/`**.
@@ -24,7 +24,7 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
      >   - TestAi.class
      >   - TestGame.class  
      > - **`TicTacToeAI`**
-     >   - [Ai.java]
+     >   - Ai.java
      >   - Game.java
      >   - Main.java
 - **`doc`: the folder contains the documentation and diagrams**
@@ -38,9 +38,9 @@ In addition to that I also added two Test files, which are in **`src/Tests`**. T
      >   - TestAi.java
      >   - TestGame.java
      > - **`TicTacToeAI`**
-     >   - Ai.java
-     >   - Game.java
-     >   - Main.java
+     >   - [Ai.java]
+     >   - [Game.java]
+     >   - [Main.java]
 
 <br/>
 
@@ -77,4 +77,6 @@ public class Game {
 
 [TicTacToe]:https://de.wikipedia.org/wiki/Tic-Tac-
 [Minimax-Algorithmus]:https://de.wikipedia.org/wiki/Minimax-Algorithmus
-[Ai.java]: https://github.com/Raboro/TicTacToe-AI/blob/master/src/TicTacToeAI/Ai.java
+[Ai.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/TicTacToeAI/Ai.java
+[Game.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/TicTacToeAI/Game.java
+[Main.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/TicTacToeAI/Ai.java
