@@ -8,7 +8,7 @@ Game <|-- Ai
 
 class Ai {
     + static void bestMove()
-    - private static int miniMax(board: String[][], isMaximasing: boolean)
+    - private static int miniMax(isMaximasing: boolean)
 }
 
 class Game {
@@ -17,6 +17,7 @@ class Game {
     + static final ai: String
     + static currentPlayer: String
 
+    - void getHumanPosition
     + void loop()
     + static boolean isValidPosition(x: int, y: int)
     + static void printBoard()
