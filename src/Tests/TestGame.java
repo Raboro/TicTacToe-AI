@@ -70,6 +70,16 @@ public class TestGame {
     }
 
     @Test
+    public void testisValidPositionOutOfRange() {
+        Assert.assertFalse(Game.isValidPosition(10, 10));
+        Assert.assertFalse(Game.isValidPosition(3, 3));
+        Assert.assertFalse(Game.isValidPosition(1, 3));
+        Assert.assertFalse(Game.isValidPosition(100, 10));
+        Assert.assertFalse(Game.isValidPosition(3, 0));
+        Assert.assertFalse(Game.isValidPosition(-1, 0));
+    }
+
+    @Test
     public void testIsTerminalStateNull() {
         Assert.assertNull(Game.isTerminalState());
         Game.board[0][0] = "X";

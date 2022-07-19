@@ -57,7 +57,7 @@ public class Game {
     }
 
     public static boolean isValidPosition(int row, int column) {
-        if (row < 3 && column < 3) {
+        if (row < 3 && column < 3 && row >= 0 && column >= 0) {
             if (board[row][column] == " ") {
                 return true;
             }
