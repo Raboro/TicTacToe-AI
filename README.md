@@ -1,4 +1,4 @@
-## **\~_TicTacToeAI_\~**
+## <pre>                 **\~_TicTacToeAI_\~**<pre>
 
 This project contains a terminal **[TicTacToe]** game. You play against an 
 AI, which uses the <br/>
