@@ -23,11 +23,11 @@ In this project the user/human can play TicTacToe against an AI. It is a termina
 Two playeers are playing against each other. There is a game board with three rows and three colums:
 
 ```
-                                                                     | |
-                                                                    -----
-                                                                     | |
-                                                                    -----
-                                                                     | |
+                                                         | |
+                                                        -----
+                                                         | |
+                                                        -----
+                                                         | |
 ```
 
 That means that there a nine free fields. Both player have their own Symbol: **`X`** or **`O`**. One after another select a empty field and fills it with his own Symbol. <br />
