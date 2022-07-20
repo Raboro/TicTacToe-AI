@@ -37,11 +37,11 @@ Both players can win by have three of there symbols horizontal/vertical or diago
 For example:
 
 ```
-X|X|X           | X| |           | X| |
------           | -----          | -----
-O| |O  ← X wins | X|O|O ← X wins | O|X| ← X wins
------           | -----          | -----
- |O|            | X|O|           | O|O|X
+                X|X|X                       | X| |                      | X| |
+                -----                       | -----                     | -----
+                O| |O  ← X wins             | X|O|O ← X wins            | O|X| ← X wins
+                -----                       | -----                     | -----
+                 |O|                        | X|O|                      | O|O|X
 ```
 
 When there is no more empty space and none of the two players won, the game is over and it´s a tie.
