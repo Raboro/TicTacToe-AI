@@ -192,6 +192,8 @@ public void loop() {
 
 But first the board gets printed by usiung the method **`printBoard`**
 
+<br />
+
 ```java
 ...
     while (true) {
@@ -318,4 +320,69 @@ And finally the check for a tie. It loops over the field and if one field is emp
         return "tie";
         ...
  
+```
+
+<br />
+
+If the game is not over the human or the AI can make a move. If the human is the current player the method **`getHumanPositions`** gets called. After that on the correct positon the symbol of the human is set and the **`currentPlayer`** gets the new value of **`AI`**. <br />
+If it´s AI´s turn the static method of the AI class gets called and after that the **`currentPlayer`** gets the new value of **`HUMAN`**.
+
+<br />
+
+```java
+public void loop() {
+
+        while (true) {
+            ...
+            // human and KI make a move
+            if (currentPlayer == HUMAN) {
+                getHumanPosition();
+                board[humanPosition[0]][humanPosition[1]] = HUMAN;
+                currentPlayer = AI;
+            } else {
+                Ai.bestMove();
+                currentPlayer = HUMAN;
+            }
+        }
+    }
+```
+
+<br />
+
+This is the **`getHumanPositions`** method. In a while loop the human select a **row** and **column** cordinate for his symbol. This position on the board gets checked by the **`isValidPosition`** method. If the position is valid the while loop stops.
+
+<br />
+
+```java
+private void getHumanPosition() {
+    while (true) {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("\nrow:");
+        int row = userInput.nextInt() - 1;
+        System.out.println("column:");
+        int column = userInput.nextInt() - 1;
+        if (isValidPosition(row, column)) {
+            humanPosition = new int[] { row, column };
+            break;
+        }
+    }
+}
+
+```
+
+<br />
+
+The **`isValidPosition`** method checks if the positon by the user input is empty, that means free and not out of the board range. If that is true the method return true, else it returns false.
+
+<br />
+
+```java
+public static boolean isValidPosition(int row, int column) {
+        if (row < 3 && column < 3 && row >= 0 && column >= 0) {
+            if (board[row][column] == " ") {
+                return true;
+            }
+        }
+        return false;
+    }
 ```
