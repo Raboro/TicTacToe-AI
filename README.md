@@ -83,7 +83,7 @@ public class Game {
 [TestAi.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/Tests/TestAi.java
 [TestGame.java]:https://github.com/Raboro/TicTacToe-AI/blob/master/src/Tests/TestGame.java
 [classdiagram.md]:https://github.com/Raboro/TicTacToe-AI/blob/master/doc/classdiagram.md
-[documentation.docx]:https://github.com/Raboro/TicTacToe-AI/blob/master/doc/documentation.md
+[documentation.md]:https://github.com/Raboro/TicTacToe-AI/blob/master/doc/documentation.md
 [settings.json]:https://github.com/Raboro/TicTacToe-AI/blob/master/.vscode/settings.json
 [TestAI.class]:https://github.com/Raboro/TicTacToe-AI/blob/master/bin/Tests/TestAi.class
 [TestGame.class]:https://github.com/Raboro/TicTacToe-AI/blob/master/bin/Tests/TestGame.class
