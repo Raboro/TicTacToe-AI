@@ -164,3 +164,7 @@ This Array stores the position the human gives as a input for his symbol in the 
 ```java
 private int[] humanPosition;
 ```
+
+<br />
+
+All of them except for the **`humanPosition`** are static. This is needed because the AI uses all of them and implement all of them as parameters would not be that clean.
