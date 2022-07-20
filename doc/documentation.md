@@ -386,3 +386,103 @@ public static boolean isValidPosition(int row, int column) {
         return false;
     }
 ```
+
+<br />
+
+That was the human turn. But what if the AI needs to pick a move. <br />
+The static method **`bestMove`** gets called. <br />
+First the method initialized **`bestScore`** and **`move`**. **`bestScore`** is set to negative infitiy. Every time a new score is greater than **`bestScore`**, the value gets overried. <br />
+**`move`** is used at the end to make the final move for the AI. It contains the row and column value.
+
+<br />
+
+```java
+public static void bestMove() {
+        int bestScore = Integer.MIN_VALUE;
+        int[] move = new int[2];
+        ...
+    }
+```
+
+<br />
+
+After that the method iterate over the board and finds all empty slots. For this empty slots it calles the **`miniMax`** method and eveluate a score for this move. If the score is greater than the **`bestScore`**, the value gets overried and the array **`move`** gets their row and column value. <br />
+At the end the best possible move gets selected and the AI set the symbol on this position.
+
+<br />
+
+```java
+        ...
+
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 3; column++) {
+                if (Game.board[row][column] == " ") {
+                    Game.board[row][column] = Game.AI;
+                    int score = miniMax(false);
+                    Game.board[row][column] = " ";
+
+                    // new best move
+                    if (score > bestScore) { 
+                        bestScore = score;
+                        move[0] = row;
+                        move[1] = column;
+                    }
+                }
+            }
+        }
+        Game.board[move[0]][move[1]] = Game.AI; // AI do the move
+```
+
+<br />
+
+So the **`miniMax`** method eveluate the score. But how? <br />
+By iterate through all the possible next moves up to a terminal state. It switches between the all moves of the human and the AI. Then all of this possible future outcomes gets one of the scores: 1, -1 or 0. <br />
+1 means KI wins, -1 human wins and 0 tie. 
+The **`miniMax`** method returns the score of the best possible outcome. 
+
+```java
+private static int miniMax(boolean isMaximasing) {
+        // is game over
+        if (Game.isTerminalState() != null) {
+            return scores(Game.isTerminalState());
+        }
+        
+        if (isMaximasing) {
+            int bestScoreMax = Integer.MIN_VALUE;
+            for (int row = 0; row < 3; row++) {
+                for (int column = 0; column < 3; column++) {
+                    if (Game.board[row][column] == " ") {
+                        Game.board[row][column] = Game.AI;
+                        int scoreMax = miniMax(false);
+                        Game.board[row][column] = " ";
+                        bestScoreMax = Math.max(scoreMax, bestScoreMax);
+                    }
+                }
+            }
+            return bestScoreMax;
+        } else {
+            int bestScoreMin = Integer.MAX_VALUE;
+            for (int row = 0; row < 3; row++) {
+                for (int column = 0; column < 3; column++) {
+                    if (Game.board[row][column] == " ") {
+                        Game.board[row][column] = Game.HUMAN;
+                        int scoreMin = miniMax(true);
+                        Game.board[row][column] = " ";
+                        bestScoreMin = Math.min(scoreMin, bestScoreMin);
+                    }
+                }
+            }
+            return bestScoreMin;
+        }
+    }
+
+    private static int scores(String result) {
+        if (result == "X") {
+            return 1;
+        } else if (result == "O") {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+```
