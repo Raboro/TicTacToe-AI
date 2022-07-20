@@ -113,7 +113,7 @@ class Main {
 
 ## **4. Implementation**
 
-First I start by creating in the **`main function`** a new game. 
+First I start by creating in the **`main method`** a new game. 
 
 ```java
 package TicTacToeAI;
@@ -168,3 +168,154 @@ private int[] humanPosition;
 <br />
 
 All of them except for the **`humanPosition`** are static. This is needed because the AI uses all of them and implement all of them as parameters would not be that clean.
+
+<br />
+
+After that in the **`main method`** the object **`game`** uses the method **`loop`**
+to launch the game.
+
+<br />
+The while loop stops when there is a terminal. If not in a terminal state the human or the KI makes their move
+
+<br />
+
+```java
+public void loop() {
+
+        while (true) {
+            ...
+        }
+    }
+```
+
+<br />
+
+But first the board gets printed by usiung the method **`printBoard`**
+
+```java
+...
+    while (true) {
+        printBoard();
+    ...      
+    }
+...
+```
+
+<br />
+This is the method for printing out the board: 
+
+<br />
+
+```java
+public static void printBoard() {
+        System.out.println("\n");
+        System.out.println(board[0][0] + " | " + board[0][1] + " | " + board[0][2]);
+        System.out.println("---------");
+        System.out.println(board[1][0] + " | " + board[1][1] + " | " + board[1][2]);
+        System.out.println("---------");
+        System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
+        System.out.println("\n");
+
+    }
+```
+
+<br />
+
+After printing the board, it needs to be checked if the game is over. 
+To accomplish that the method **`isTerminalState`** checks if there is a terminal state.
+If there is a terminal state the winner or tie gets printed and the loop stops and the game is over.
+
+<br />
+
+```java
+...
+    while (true) {
+        printBoard();
+
+        // check if game if over
+        String state = isTerminalState();
+        if (state != null) {
+            if (state == "tie") {
+                System.out.println(state);
+                break;
+            }
+            System.out.println(state + " wins");
+            break;
+        }
+        ...
+    }
+...    
+
+```
+
+<br />
+
+First the method **`isTerminalState`** loops over the the rows and checks if in the rows are only the same symbols. If this is true, the symbol of the winner gets returned.
+
+<br />
+
+```java
+public static String isTerminalState() {
+        // check rows
+        for (int row = 0; row < 3; row++) {
+            if (board[row][0] == board[row][1] && board[row][1] == board[row][2] && board[row][1] != " ") {
+                return board[row][0];
+            }
+        }
+        ...
+}
+
+```
+
+<br />
+
+The same prinzip is used for the colums.
+
+<br />
+
+```java
+        ...
+        // check columns
+        for (int column = 0; column < 3; column++) {
+            if (board[0][column] == board[1][column] && board[1][column] == board[2][column]
+                    && board[1][column] != " ") {
+                return board[0][column];
+            }
+        }
+        ...
+```
+
+<br />
+
+After the rows and colums the diagonals needs to be checked.
+
+<br />
+
+```java
+        ...
+        if (((board[0][0] == board[1][1] && board[1][1] == board[2][2])
+                || (board[0][2] == board[1][1] && board[1][1] == board[2][0])) && board[1][1] != " ") {
+            return board[1][1];
+        }
+        ...
+```
+
+<br />
+
+
+And finally the check for a tie. It loops over the field and if one field is empty, the method returns null, which means the game is not over. Else the method returns a tie.
+
+<br />
+
+```java
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 3; column++) {
+                if (board[row][column] == " ") {
+                    return null;
+                }
+            }
+        }
+        return "tie";
+        ...
+ 
+```
