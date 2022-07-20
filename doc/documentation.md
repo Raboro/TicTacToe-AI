@@ -116,15 +116,15 @@ class Main {
 First I start by creating in the **`main method`** a new game. 
 
 ```java
-package TicTacToeAI;
-
-public class Main {
-    public static void main(String[] args) {
-        Game game = new Game();
-        game.loop();
-    }
-
-}
+1   package TicTacToeAI;
+2    
+3   public class Main {
+4       public static void main(String[] args) {
+5           Game game = new Game();
+6           game.loop();
+7       }
+8
+9   }
 ```
 
 ### **`Game`** contains the following attributes:
@@ -133,36 +133,36 @@ public class Main {
 
 The 2d Array board, which contains the symbols by the players and the emtpy spaces. By default the whole board is empty
 ```java
-public static String[][] board = {
-            { " ", " ", " " },
-            { " ", " ", " " },
-            { " ", " ", " " }
-    };
+7   public static String[][] board = {
+8               { " ", " ", " " },
+9               { " ", " ", " " },
+10              { " ", " ", " " }
+11  };
 ```
 
 <br />
 
 The symbol for the human as a not changeable constante
 ```java
-public static final String HUMAN = "O";
+12  public static final String HUMAN = "O";
 ```
 <br />
 
 The symbol for the AI as a not changeable constante
 ```java
-public static final String AI = "X";
+13  public static final String AI = "X";
 ```
 <br />
 
 The symbol for the current player, which also mean the player, which stats the game
 ```java
-public static String currentPlayer = HUMAN;
+14  public static String currentPlayer = HUMAN;
 ```
 <br />
 
 This Array stores the position the human gives as a input for his symbol in the board
 ```java
-private int[] humanPosition;
+15  private int[] humanPosition;
 ```
 
 <br />
@@ -180,12 +180,12 @@ The while loop stops when there is a terminal. If not in a terminal state the hu
 <br />
 
 ```java
-public void loop() {
-
-        while (true) {
-            ...
-        }
-    }
+31  public void loop() {
+32
+33      while (true) {
+34          ...
+56      }
+57  }
 ```
 
 <br />
@@ -195,12 +195,12 @@ But first the board gets printed by usiung the method **`printBoard`**
 <br />
 
 ```java
-...
-    while (true) {
-        printBoard();
-    ...      
-    }
-...
+32  ...
+33  while (true) {
+34      printBoard();
+35  ...      
+56  }
+57  ...
 ```
 
 <br />
@@ -209,16 +209,16 @@ This is the method for printing out the board:
 <br />
 
 ```java
-public static void printBoard() {
-        System.out.println("\n");
-        System.out.println(board[0][0] + " | " + board[0][1] + " | " + board[0][2]);
-        System.out.println("---------");
-        System.out.println(board[1][0] + " | " + board[1][1] + " | " + board[1][2]);
-        System.out.println("---------");
-        System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
-        System.out.println("\n");
-
-    }
+68  public static void printBoard() {
+69      System.out.println("\n");
+70      System.out.println(board[0][0] + " | " + board[0][1] + " | " + board[0][2]);
+71      System.out.println("---------");
+72      System.out.println(board[1][0] + " | " + board[1][1] + " | " + board[1][2]);
+73      System.out.println("---------");
+74      System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
+75      System.out.println("\n");
+76
+77  }
 ```
 
 <br />
@@ -230,23 +230,23 @@ If there is a terminal state the winner or tie gets printed and the loop stops a
 <br />
 
 ```java
-...
-    while (true) {
-        printBoard();
-
-        // check if game if over
-        String state = isTerminalState();
-        if (state != null) {
-            if (state == "tie") {
-                System.out.println(state);
-                break;
-            }
-            System.out.println(state + " wins");
-            break;
-        }
-        ...
-    }
-...    
+32  ...
+33  while (true) {
+34      printBoard();
+35
+36      // check if game if over
+37      String state = isTerminalState();
+38      if (state != null) {
+39          if (state == "tie") {
+40              System.out.println(state);
+41              break;
+42          }
+43          System.out.println(state + " wins");
+44          break;
+45      }
+46      ...
+56  }
+57  ...    
 
 ```
 
@@ -257,15 +257,15 @@ First the method **`isTerminalState`** loops over the the rows and checks if in 
 <br />
 
 ```java
-public static String isTerminalState() {
-        // check rows
-        for (int row = 0; row < 3; row++) {
-            if (board[row][0] == board[row][1] && board[row][1] == board[row][2] && board[row][1] != " ") {
-                return board[row][0];
-            }
-        }
-        ...
-}
+79  public static String isTerminalState() {
+80      // check rows
+81      for (int row = 0; row < 3; row++) {
+82          if (board[row][0] == board[row][1] && board[row][1] == board[row][2] && board[row][1] != " ") {
+83              return board[row][0];
+84          }
+85      }
+86      ...
+109 }
 
 ```
 
@@ -276,15 +276,15 @@ The same prinzip is used for the colums.
 <br />
 
 ```java
-        ...
-        // check columns
-        for (int column = 0; column < 3; column++) {
-            if (board[0][column] == board[1][column] && board[1][column] == board[2][column]
-                    && board[1][column] != " ") {
-                return board[0][column];
-            }
-        }
-        ...
+86      ...
+87      // check columns
+88      for (int column = 0; column < 3; column++) {
+89          if (board[0][column] == board[1][column] && board[1][column] == board[2][column]
+90                  && board[1][column] != " ") {
+91              return board[0][column];
+92          }
+93      }
+94      ...
 ```
 
 <br />
@@ -294,12 +294,13 @@ After the rows and colums the diagonals needs to be checked.
 <br />
 
 ```java
-        ...
-        if (((board[0][0] == board[1][1] && board[1][1] == board[2][2])
-                || (board[0][2] == board[1][1] && board[1][1] == board[2][0])) && board[1][1] != " ") {
-            return board[1][1];
-        }
-        ...
+94      ...
+95      // check diagonal
+96      if (((board[0][0] == board[1][1] && board[1][1] == board[2][2])
+97              || (board[0][2] == board[1][1] && board[1][1] == board[2][0])) && board[1][1] != " ") {
+98          return board[1][1];
+99      }
+100     ...
 ```
 
 <br />
@@ -310,15 +311,16 @@ And finally the check for a tie. It loops over the field and if one field is emp
 <br />
 
 ```java
-        for (int row = 0; row < 3; row++) {
-            for (int column = 0; column < 3; column++) {
-                if (board[row][column] == " ") {
-                    return null;
-                }
-            }
-        }
-        return "tie";
-        ...
+100       ...
+101       for (int row = 0; row < 3; row++) {
+102           for (int column = 0; column < 3; column++) {
+103               if (board[row][column] == " ") {
+104                   return null;
+105               }
+106           }
+107       }
+108       return "tie";
+109       ...
  
 ```
 
@@ -330,21 +332,21 @@ If it´s AI´s turn the static method of the AI class gets called and after that
 <br />
 
 ```java
-public void loop() {
-
-        while (true) {
-            ...
-            // human and KI make a move
-            if (currentPlayer == HUMAN) {
-                getHumanPosition();
-                board[humanPosition[0]][humanPosition[1]] = HUMAN;
-                currentPlayer = AI;
-            } else {
-                Ai.bestMove();
-                currentPlayer = HUMAN;
-            }
-        }
-    }
+31  public void loop() {
+32 
+33      while (true) {
+34          ...
+47          // human and KI make a move
+48          if (currentPlayer == HUMAN) {
+49              getHumanPosition();
+50              board[humanPosition[0]][humanPosition[1]] = HUMAN;
+51              currentPlayer = AI;
+52          } else {
+53              Ai.bestMove();
+54              currentPlayer = HUMAN;
+55          }
+56      }
+57  }
 ```
 
 <br />
@@ -354,19 +356,19 @@ This is the **`getHumanPositions`** method. In a while loop the human select a *
 <br />
 
 ```java
-private void getHumanPosition() {
-    while (true) {
-        Scanner userInput = new Scanner(System.in);
-        System.out.println("\nrow:");
-        int row = userInput.nextInt() - 1;
-        System.out.println("column:");
-        int column = userInput.nextInt() - 1;
-        if (isValidPosition(row, column)) {
-            humanPosition = new int[] { row, column };
-            break;
-        }
-    }
-}
+17  private void getHumanPosition() {
+18      while (true) {
+19          Scanner userInput = new Scanner(System.in);
+20          System.out.println("\nrow:");
+21          int row = userInput.nextInt() - 1;
+22          System.out.println("column:");
+23          int column = userInput.nextInt() - 1;
+24          if (isValidPosition(row, column)) {
+25              humanPosition = new int[] { row, column };
+26              break;
+27          }
+28      }
+29  }
 
 ```
 
@@ -377,14 +379,14 @@ The **`isValidPosition`** method checks if the positon by the user input is empt
 <br />
 
 ```java
-public static boolean isValidPosition(int row, int column) {
-        if (row < 3 && column < 3 && row >= 0 && column >= 0) {
-            if (board[row][column] == " ") {
-                return true;
-            }
-        }
-        return false;
-    }
+59  public static boolean isValidPosition(int row, int column) {
+60      if (row < 3 && column < 3 && row >= 0 && column >= 0) {
+61          if (board[row][column] == " ") {
+62              return true;
+63          }
+64      }
+65      return false;
+66  }
 ```
 
 <br />
@@ -397,11 +399,11 @@ First the method initialized **`bestScore`** and **`move`**. **`bestScore`** is 
 <br />
 
 ```java
-public static void bestMove() {
-        int bestScore = Integer.MIN_VALUE;
-        int[] move = new int[2];
-        ...
-    }
+5   public static void bestMove() {
+6      int bestScore = Integer.MIN_VALUE;
+7      int[] move = new int[2];
+8      ...
+26  }
 ```
 
 <br />
@@ -412,25 +414,25 @@ At the end the best possible move gets selected and the AI set the symbol on thi
 <br />
 
 ```java
-        ...
-
-        for (int row = 0; row < 3; row++) {
-            for (int column = 0; column < 3; column++) {
-                if (Game.board[row][column] == " ") {
-                    Game.board[row][column] = Game.AI;
-                    int score = miniMax(false);
-                    Game.board[row][column] = " ";
-
-                    // new best move
-                    if (score > bestScore) { 
-                        bestScore = score;
-                        move[0] = row;
-                        move[1] = column;
-                    }
-                }
-            }
-        }
-        Game.board[move[0]][move[1]] = Game.AI; // AI do the move
+7        ...
+8
+9       for (int row = 0; row < 3; row++) {
+10          for (int column = 0; column < 3; column++) {
+11              if (Game.board[row][column] == " ") {
+12                  Game.board[row][column] = Game.AI;
+13                  int score = miniMax(false);
+14                  Game.board[row][column] = " ";
+15
+16                  // new best move
+17                  if (score > bestScore) { 
+18                      bestScore = score;
+19                      move[0] = row;
+20                      move[1] = column;
+21                  }
+22              }
+23          }
+24      }
+25      Game.board[move[0]][move[1]] = Game.AI; // AI do the move
 ```
 
 <br />
@@ -441,48 +443,48 @@ By iterate through all the possible next moves up to a terminal state. It switch
 The **`miniMax`** method returns the score of the best possible outcome. 
 
 ```java
-private static int miniMax(boolean isMaximasing) {
-        // is game over
-        if (Game.isTerminalState() != null) {
-            return scores(Game.isTerminalState());
-        }
-        
-        if (isMaximasing) {
-            int bestScoreMax = Integer.MIN_VALUE;
-            for (int row = 0; row < 3; row++) {
-                for (int column = 0; column < 3; column++) {
-                    if (Game.board[row][column] == " ") {
-                        Game.board[row][column] = Game.AI;
-                        int scoreMax = miniMax(false);
-                        Game.board[row][column] = " ";
-                        bestScoreMax = Math.max(scoreMax, bestScoreMax);
-                    }
-                }
-            }
-            return bestScoreMax;
-        } else {
-            int bestScoreMin = Integer.MAX_VALUE;
-            for (int row = 0; row < 3; row++) {
-                for (int column = 0; column < 3; column++) {
-                    if (Game.board[row][column] == " ") {
-                        Game.board[row][column] = Game.HUMAN;
-                        int scoreMin = miniMax(true);
-                        Game.board[row][column] = " ";
-                        bestScoreMin = Math.min(scoreMin, bestScoreMin);
-                    }
-                }
-            }
-            return bestScoreMin;
-        }
-    }
-
-    private static int scores(String result) {
-        if (result == "X") {
-            return 1;
-        } else if (result == "O") {
-            return -1;
-        } else {
-            return 0;
-        }
-    }
+28  private static int miniMax(boolean isMaximasing) {
+29      // is game over
+30      if (Game.isTerminalState() != null) {
+31          return scores(Game.isTerminalState());
+32      }
+33        
+34      if (isMaximasing) {
+35          int bestScoreMax = Integer.MIN_VALUE;
+36          for (int row = 0; row < 3; row++) {
+37              for (int column = 0; column < 3; column++) {
+38                  if (Game.board[row][column] == " ") {
+39                      Game.board[row][column] = Game.AI;
+40                      int scoreMax = miniMax(false);
+41                      Game.board[row][column] = " ";
+42                      bestScoreMax = Math.max(scoreMax, bestScoreMax);
+43                  }
+44              }
+45          }
+46          return bestScoreMax;
+47      } else {
+48          int bestScoreMin = Integer.MAX_VALUE;
+49          for (int row = 0; row < 3; row++) {
+50              for (int column = 0; column < 3; column++) {
+51                  if (Game.board[row][column] == " ") {
+52                      Game.board[row][column] = Game.HUMAN;
+53                      int scoreMin = miniMax(true);
+54                      Game.board[row][column] = " ";
+55                      bestScoreMin = Math.min(scoreMin, bestScoreMin);
+56                  }
+57              }
+58          }
+59          return bestScoreMin;
+60      }
+61  }
+62
+63    private static int scores(String result) {
+64        if (result == "X") {
+65            return 1;
+66        } else if (result == "O") {
+67            return -1;
+68        } else {
+69            return 0;
+70        }
+71    }
 ```
