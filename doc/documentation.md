@@ -4,7 +4,6 @@
 2. Solution Idea
 3. Class Diagram
 4. Implementation
-5. Testing 
 
 <br/>
 <br/>
@@ -13,7 +12,7 @@
 
 ## **1. Project Overview**
 
-In this project the user/human can play TicTacToe against an AI. It is a terminal game, that means there is no GUI. The implementation is in Java. 
+In this project the user/human can play TicTacToe against an AI. It is a terminal game, that means there is no GUI. The implementation is in Java with JUnit4 for testing. 
 
 <br/>
 <br/>
@@ -105,4 +104,63 @@ class Main {
 
 @enduml
 
+```
+
+<br />
+<br />
+<br />
+
+
+## **4. Implementation**
+
+First I start by creating in the **`main function`** a new game. 
+
+```java
+package TicTacToeAI;
+
+public class Main {
+    public static void main(String[] args) {
+        Game game = new Game();
+        game.loop();
+    }
+
+}
+```
+
+### **`Game`** contains the following attributes:
+
+<br />
+
+The 2d Array board, which contains the symbols by the players and the emtpy spaces. By default the whole board is empty
+```java
+public static String[][] board = {
+            { " ", " ", " " },
+            { " ", " ", " " },
+            { " ", " ", " " }
+    };
+```
+
+<br />
+
+The symbol for the human as a not changeable constante
+```java
+public static final String HUMAN = "O";
+```
+<br />
+
+The symbol for the AI as a not changeable constante
+```java
+public static final String AI = "X";
+```
+<br />
+
+The symbol for the current player, which also mean the player, which stats the game
+```java
+public static String currentPlayer = HUMAN;
+```
+<br />
+
+This Array stores the position the human gives as a input for his symbol in the board
+```java
+private int[] humanPosition;
 ```
